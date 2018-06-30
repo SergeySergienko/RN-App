@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 
 class SignIn extends React.Component {
   state = {
@@ -22,9 +22,14 @@ class SignIn extends React.Component {
           onChangeText={password => this.setState({ password })}
           secureTextEntry
         />
+        <TouchableOpacity onPress={this.signIn} style={styles.button}>
+          <Text>Sign In</Text>
+        </TouchableOpacity>
       </View>
     );
   }
+
+  signIn = () => console.log('Sign In');
 }
 
 const styles = StyleSheet.create({
@@ -33,6 +38,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 40,
     marginBottom: 40
+  },
+  button: {
+    backgroundColor: 'yellow',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    padding: 5
   }
 });
 
