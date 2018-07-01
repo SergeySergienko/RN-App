@@ -4,17 +4,24 @@ import {eventList} from '../../fixtures';
 
 export default class Event extends React.Component {
   static defaultProps = {
-    event: eventList[1]
+    events: eventList
   }
-
+  
   render() {
-    const {event} = this.props;
-    console.log(event);
-    return (
+    const {events} = this.props;
+    // console.log(event);
+    const list = eventList.map(event => 
       <View>
         <Text style = {styles.title}>{event.title}</Text>
-        <Text>{event.when}</Text>
-        <Text>{event.where}</Text>
+        <View style = {styles.description}>
+          <Text>{event.when}</Text>
+          <Text>{event.where}</Text>
+        </View>
+        <Text>{event.url}</Text>
+      </View>);
+    return (
+      <View>
+      {list}
       </View>
     );
   }
@@ -23,7 +30,12 @@ export default class Event extends React.Component {
 const styles = StyleSheet.create({
   title: {
     fontSize: 30,
-    fontWeight: "800",
+    fontWeight: "600",
     marginBottom: 20
+  },
+  description: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginBottom: 40
   }
 });

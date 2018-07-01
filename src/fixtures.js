@@ -9,12 +9,47 @@ export const data = {
     },
     '1': {
       'month': 'April',
-      'title': 'AlterConf',
+      'title': 'Alter Conference',
       'url': 'http://www.alterconference.com',
       'when': 'April 10, 2017',
       'where': 'London, England'
     },
     '2': {
+      'month': 'May',
+      'title': 'An Event Apart',
+      'url': 'http://www.apartconference.com',
+      'when': 'May 19-21, 2017',
+      'where': 'Paris, France'
+    },
+    '3': {
+      'month': 'May',
+      'title': 'An Event Apart',
+      'url': 'http://www.apartconference.com',
+      'when': 'May 19-21, 2017',
+      'where': 'Paris, France'
+    },
+    '4': {
+      'month': 'May',
+      'title': 'An Event Apart',
+      'url': 'http://www.apartconference.com',
+      'when': 'May 19-21, 2017',
+      'where': 'Paris, France'
+    },
+    '5': {
+      'month': 'May',
+      'title': 'An Event Apart',
+      'url': 'http://www.apartconference.com',
+      'when': 'May 19-21, 2017',
+      'where': 'Paris, France'
+    },
+    '6': {
+      'month': 'May',
+      'title': 'An Event Apart',
+      'url': 'http://www.apartconference.com',
+      'when': 'May 19-21, 2017',
+      'where': 'Paris, France'
+    },
+    '7': {
       'month': 'May',
       'title': 'An Event Apart',
       'url': 'http://www.apartconference.com',
