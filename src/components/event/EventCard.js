@@ -7,17 +7,17 @@ export default class EventCard extends React.Component {
     const {event} = this.props;
     return (
       <View style = {styles.container}>
-      <Text style = {styles.title}>{event.title}</Text>
-      <Card style={styles.card}>
-      <Image source = {{uri: "http://lorempixel.com/100/50/fashion"}}
-             style = {styles.image}
-      />
-        <View style = {styles.description}>
-          <Text>{event.when}</Text>
-          <Text>{event.where}</Text>
-          <Text>{event.url}</Text>
-        </View>
-      </Card>
+        <Text style = {styles.title}>{event.title}</Text>
+        <Card style={styles.card}>
+        <Image source = {{uri: "http://lorempixel.com/100/50/fashion"}}
+               style = {styles.image}
+        />
+          <View style = {styles.description}>
+            <Text>{event.when}</Text>
+            <Text>{event.where}</Text>
+            <Text>{event.url}</Text>
+          </View>
+        </Card>
       </View>
     );
   }
@@ -26,6 +26,7 @@ export default class EventCard extends React.Component {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
+    backgroundColor: "#eee",
     borderWidth: 1,
     borderStyle: 'solid',
     padding: 10,

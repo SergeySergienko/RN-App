@@ -30,7 +30,7 @@ export const data = {
     },
     '4': {
       'month': 'May',
-      'title': 'An Event Apart',
+      'title': 'The Event',
       'url': 'http://www.apartconference.com',
       'when': 'May 19-21, 2017',
       'where': 'Paris, France'
@@ -44,7 +44,7 @@ export const data = {
     },
     '6': {
       'month': 'May',
-      'title': 'An Event Apart',
+      'title': 'The Event',
       'url': 'http://www.apartconference.com',
       'when': 'May 19-21, 2017',
       'where': 'Paris, France'
