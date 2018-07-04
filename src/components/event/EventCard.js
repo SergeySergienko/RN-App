@@ -9,7 +9,7 @@ export default class EventCard extends React.Component {
       <View style = {styles.container}>
         <Text style = {styles.title}>{event.title}</Text>
         <Card style={styles.card}>
-        <Image source = {{uri: "http://lorempixel.com/100/50/fashion"}}
+        <Image source = {require('/assets/images/manicure.jpg')}
                style = {styles.image}
         />
           <View style = {styles.description}>
@@ -48,9 +48,6 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 80,
-    height: 50,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    margin: 5
+    height: 50
   }
 });
