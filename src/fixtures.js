@@ -16,17 +16,17 @@ export const data = {
     },
     '2': {
       'month': 'May',
-      'title': 'An Event Apart',
-      'url': 'http://www.apartconference.com',
+      'title': 'Барион',
+      'url': 'http://www.barion.com.ua',
       'when': 'May 19-21, 2017',
-      'where': 'Paris, France'
+      'where': 'Харьков, Украина'
     },
     '3': {
       'month': 'May',
       'title': 'An Event Apart',
       'url': 'http://www.apartconference.com',
       'when': 'May 19-21, 2017',
-      'where': 'Paris, France'
+      'where': 'London, England'
     },
     '4': {
       'month': 'May',
@@ -40,7 +40,7 @@ export const data = {
       'title': 'An Event Apart',
       'url': 'http://www.apartconference.com',
       'when': 'May 19-21, 2017',
-      'where': 'Paris, France'
+      'where': 'Edinburgh, Scotland'
     },
     '6': {
       'month': 'May',
@@ -60,9 +60,7 @@ export const data = {
 }
 
 function toArr(obj) {
-  const arr = Object.entries(obj);
-  const newArr = arr.map(([uid, value]) => ({uid, ...value}));
-  return newArr;
+  return Object.entries(obj).map(([uid, value]) => ({uid, ...value}));
 }
 
 export const eventList = toArr(data.events);

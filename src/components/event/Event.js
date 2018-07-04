@@ -1,41 +1,60 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import {eventList} from '../../fixtures';
+import ConfirmModal from '../common/ConfirmModal'
 
 export default class Event extends React.Component {
   static defaultProps = {
-    events: eventList
+    event: eventList[2]
   }
+  state = {
+    confirmModal: false
+  };
   
   render() {
-    const {events} = this.props;
+    const {event} = this.props;
     // console.log(event);
-    const list = eventList.map(event => 
+    // const list = eventList.map(event => 
+      
+    return (
       <View>
         <Text style = {styles.title}>{event.title}</Text>
         <View style = {styles.description}>
           <Text>{event.when}</Text>
           <Text>{event.where}</Text>
         </View>
-        <Text>{event.url}</Text>
-      </View>);
-    return (
-      <View>
-      {list}
+        <Text style={{marginBottom: 40}}>{event.url}</Text>
+        <View style = {styles.button}>
+          <Button onPress = {this.handleDelete}
+                  title = 'Delete'
+                  color = 'blue'
+          />
+        </View>
+        <ConfirmModal visible = {this.state.confirmModal}
+          onConfirm = {this.confirmDelete}
+          onCancel = {this.cancelDelete}
+        >Are you sure for delete "{event.title}"?
+        </ConfirmModal>
       </View>
     );
   }
+  
+ handleDelete = () => this.setState({confirmModal: true});
+ confirmDelete = () => this.setState({confirmModal: false});
+ cancelDelete = () => this.setState({confirmModal: false});
 }
+
+
 
 const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "600",
-    marginBottom: 20
+    marginBottom: 40
   },
   description: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    marginBottom: 40
+    marginBottom: 20
   }
 });

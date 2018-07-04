@@ -25,7 +25,7 @@ export default class EventCard extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "99%",
     backgroundColor: "#eee",
     borderWidth: 1,
     borderStyle: 'solid',
@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginBottom: 20
   },
-  // description: {
-  //   flexDirection: "row",
-  //   justifyContent: "space-evenly",
-  //   marginBottom: 40
-  // },
+  description: {
+    // flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginBottom: 40
+  },
   image: {
     width: 80,
     height: 50,

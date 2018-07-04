@@ -6,28 +6,28 @@ import {eventList} from '../../fixtures';
 
 export default class EventList extends React.Component {
   render() {
-    const grouped = groupBy(eventList, event => event.title.charAt(0));
+    const grouped = groupBy(eventList, event => event.where);
     const sections = Object.entries(grouped).map(([letter,list]) => ({
-      title: `${letter} ${list.length} events`,
+      title: `${letter} - ${list.length} events`,
       data: list.map(event => ({key: event.uid, event}))
-    }))
+    }));
+    console.log(sections);
     return (
-      <SectionList style={styles.container}>
+      <SectionList
         sections = {sections}
-        renderSectionHeader = {({section}) => <Text style = {styles.header}>{section.title}</Text>}
-        renderItem = {({item}) => <EventCard event = {item.event} />}
-      </SectionList>
+        renderSectionHeader = {({section: {title}}) => <Text style = {styles.header}>{title}</Text>}
+        renderItem = {({item, index, section}) => <EventCard key = {item.key} event = {item.event} />}
+        keyExtractor={(item, index) => item + index}
+      />
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    
-  },
   header: {
-    backgroundColor: '#f0f0f0',
-    height: 40,
-    lineHeigth: 40
+    backgroundColor: '#dddaaa',
+    height: 30,
+    fontSize: 24,
+    fontWeight: 'bold'
   }
 });
