@@ -4,7 +4,8 @@ import Card from "../common/Card";
 
 export default class EventCard extends React.Component {
   render() {
-    const {event} = this.props;
+    const {event, key} = this.props;
+    // console.log(event);
     return (
       <View style = {styles.container}>
         <Text style = {styles.title}>{event.title}</Text>

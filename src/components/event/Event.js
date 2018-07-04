@@ -4,16 +4,16 @@ import {eventList} from '../../fixtures';
 import ConfirmModal from '../common/ConfirmModal'
 
 export default class Event extends React.Component {
-  static defaultProps = {
-    event: eventList[2]
-  }
+  // static defaultProps = {
+  //   event: eventList[2]
+  // }
   state = {
     confirmModal: false
   };
   
   render() {
-    const {event} = this.props;
-    // console.log(event);
+    const {uid} = this.props;
+    const event = eventList[uid];
     // const list = eventList.map(event => 
       
     return (
@@ -27,7 +27,7 @@ export default class Event extends React.Component {
         <View style = {styles.button}>
           <Button onPress = {this.handleDelete}
                   title = 'Delete'
-                  color = 'blue'
+                  color = 'red'
           />
         </View>
         <ConfirmModal visible = {this.state.confirmModal}

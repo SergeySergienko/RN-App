@@ -9,12 +9,12 @@ export default class EventListScreen extends React.Component {
   }
 
   render() {
-    return <EventList />
+    return <EventList onEventPress={this.handleEventPress}/>
   }
+  
+  handleEventPress = (uid) => this.props.navigation.navigate('event', {uid});
 }
 
 const styles = StyleSheet.create({
-  container: {
-    
-  }
+  
 });
