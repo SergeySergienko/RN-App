@@ -1,5 +1,5 @@
 import React from "react";
-import Root from "./src/Root";
+import './src/initFB';
 import { StyleSheet, Text, View } from "react-native";
 import AppNavigator from './src/AppNavigator';
 

@@ -1,7 +1,8 @@
 import React from "react";
 import {observer} from 'mobx-react';
+import firebase from 'firebase';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
-import userStore from '../../stores/userStore';
+import userStore from '../../stores/user';
 
 const SignIn = observer(class SignIn extends React.Component {
   // state = {
@@ -33,7 +34,14 @@ const SignIn = observer(class SignIn extends React.Component {
     );
   }
 
-  signIn = () => console.log('Sign In');
+  signIn = () => {
+    firebase.auth().signInWithEmailAndPassword(userStore.email, userStore.password)
+    .then(user => {
+      userStore.user = user;
+      this.props.navigation.navigate('eventList');
+    });
+    console.log(userStore.email);
+  }
 })
 
 const styles = StyleSheet.create({
