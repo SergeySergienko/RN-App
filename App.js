@@ -5,7 +5,7 @@ import AppNavigator from './src/AppNavigator';
 
 export default class App extends React.Component {
   render() {
-    return <AppNavigator />
+    return <AppNavigator style={styles.container} />
   }
 }
 
