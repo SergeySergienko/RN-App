@@ -1,5 +1,7 @@
 import React from "react";
+import {observer} from 'mobx-react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import userStore from '../../stores/userStore';
 
 class SignIn extends React.Component {
   state = {

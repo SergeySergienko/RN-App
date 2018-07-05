@@ -1,8 +1,9 @@
 {
-  "presets": ["babel-preset-expo"],
+  "presets": ["babel-preset-expo", "es2015", "stage-1"],
+  "plugins": ["transform-decorators-legacy"],
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "plugins": ["transform-react-jsx-source","transform-decorators-legacy"]
     }
   }
 }
