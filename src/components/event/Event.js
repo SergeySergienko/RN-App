@@ -6,13 +6,13 @@ import {observer} from 'mobx-react';
 import {web} from 'react-native-communications';
 
 const Event = observer(class Event extends React.Component {
+
   state = {
     confirmModal: false
   };
   
   render() {
-    const {uid} = this.props;
-    const event = eventList[uid];
+    const event = eventList[this.props.uid];
 
     return (
       <View>
@@ -24,6 +24,7 @@ const Event = observer(class Event extends React.Component {
         <TouchableOpacity onPress = {this.goToUrl}>
           <Text style={{marginBottom: 40}}>{event.url}</Text>
         </TouchableOpacity>
+        <Text>{this.state.uid}</Text>
         <View style = {styles.button}>
           <Button onPress = {this.handleDelete}
                   title = 'Delete'
@@ -39,7 +40,7 @@ const Event = observer(class Event extends React.Component {
     );
   }
   
- goToUrl = () => web(this.props.event.url); 
+ goToUrl = () => web(eventList[this.props.uid].url); 
  handleDelete = () => this.setState({confirmModal: true});
  confirmDelete = () => this.setState({confirmModal: false});
  cancelDelete = () => this.setState({confirmModal: false});
