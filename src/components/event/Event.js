@@ -30,6 +30,10 @@ const Event = observer(class Event extends React.Component {
                   title = 'Delete'
                   color = 'red'
           />
+          <Button onPress = {this.goToMap}
+                  title = 'Map'
+                  color = 'blue' 
+          />
         </View>
         <ConfirmModal visible = {this.state.confirmModal}
           onConfirm = {this.confirmDelete}
@@ -40,7 +44,8 @@ const Event = observer(class Event extends React.Component {
     );
   }
   
- goToUrl = () => web(eventList[this.props.uid].url); 
+ goToUrl = () => web(eventList[this.props.uid].url);
+ goToMap = () => this.props.navigation.navigate('eventMap');
  handleDelete = () => this.setState({confirmModal: true});
  confirmDelete = () => this.setState({confirmModal: false});
  cancelDelete = () => this.setState({confirmModal: false});
