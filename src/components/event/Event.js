@@ -1,12 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import {eventList} from '../../fixtures';
-import ConfirmModal from '../common/ConfirmModal'
+import ConfirmModal from '../common/ConfirmModal';
+import {observer} from 'mobx-react';
+import {web} from 'react-native-communications';
 
-export default class Event extends React.Component {
-  // static defaultProps = {
-  //   event: eventList[2]
-  // }
+const Event = observer(class Event extends React.Component {
   state = {
     confirmModal: false
   };
@@ -14,8 +13,7 @@ export default class Event extends React.Component {
   render() {
     const {uid} = this.props;
     const event = eventList[uid];
-    // const list = eventList.map(event => 
-      
+
     return (
       <View>
         <Text style = {styles.title}>{event.title}</Text>
@@ -23,7 +21,9 @@ export default class Event extends React.Component {
           <Text>{event.when}</Text>
           <Text>{event.where}</Text>
         </View>
-        <Text style={{marginBottom: 40}}>{event.url}</Text>
+        <TouchableOpacity onPress = {this.goToUrl}>
+          <Text style={{marginBottom: 40}}>{event.url}</Text>
+        </TouchableOpacity>
         <View style = {styles.button}>
           <Button onPress = {this.handleDelete}
                   title = 'Delete'
@@ -39,10 +39,11 @@ export default class Event extends React.Component {
     );
   }
   
+ goToUrl = () => web(this.props.event.url); 
  handleDelete = () => this.setState({confirmModal: true});
  confirmDelete = () => this.setState({confirmModal: false});
  cancelDelete = () => this.setState({confirmModal: false});
-}
+});
 
 
 
@@ -58,3 +59,5 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
+
+export default Event;

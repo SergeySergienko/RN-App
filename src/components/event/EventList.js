@@ -6,7 +6,7 @@ import {eventList} from '../../fixtures';
 
 export default class EventList extends React.Component {
   render() {
-    const {onEventPress, events} = this.props;
+    const {onEventPress} = this.props;
     const grouped = groupBy(eventList, event => event.where);
     const sections = Object.entries(grouped).map(([letter,list]) => ({
       title: `${letter} - ${list.length} events`,

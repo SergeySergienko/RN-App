@@ -5,12 +5,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-nativ
 import userStore from '../../stores/user';
 
 const SignIn = observer(class SignIn extends React.Component {
-  // state = {
-  //   email: "",
-  //   password: ""
-  // };
   render() {
-    // const { email, password } = this.state;
     return (
       <View style={styles.container}>
         <Text style={styles.header}>Please Sign In</Text>
